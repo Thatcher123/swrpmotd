@@ -1,0 +1,155 @@
+* {
+  /**
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  **/
+}
+
+/**
+COLOURS WOOOOOO
+**/
+html {
+  background: #242424;
+  background: linear-gradient(to bottom right, #072039, #000);
+  min-height: 100%;
+}
+body {
+  background-color: #222;
+}
+p, h1, h2, li {
+  color: white;
+}
+.button, .back-to-top {
+  background-color: #ff8c00;
+}
+a {
+  color: #ff8c00;
+}
+ol > li:before {
+  color: #ff8c00;
+}
+ol > li.lightList:before {
+  color: #1c86ee;
+}
+
+/** gay stuff **/
+
+body {
+  width: 60%;
+  margin: auto;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-radius: 10px;
+}
+
+#signature {
+  text-align: center;
+  font-size: 12px;
+  padding: 15px 0;
+}
+
+p, h1, h2, li {
+  font-family: Roboto;
+  font-size: 16px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 24px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+li, .intro p {
+  font-size: 14px;
+}
+
+.glossary li {
+  font-size: 13px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+img:not(.staff) {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.staff {
+  border-radius: 5px;
+  margin: 10px 1px 0px 1px;
+}
+.admins {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.button {
+  text-align: center;
+  padding: 10px 0;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+.button:not(h1) {
+  width: 80%;
+  margin-top: 15px;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/** Intro styling **/
+.pris {
+  color: #ff6961;
+  font-weight: bold;
+}
+.guard {
+  color: #779ecb;
+  font-weight: bold;
+}
+.warden {
+  color: #7b78cc;
+  font-weight: bold;
+}
+
+/** List styling **/
+ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+ol > li:before {
+  font-weight: bold;
+  content: counter(li);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl;
+  counter-increment: li;
+}
+
+/** Beam me up, Scotty! **/
+.back-to-top {
+  /** Font **/
+  font-family: Roboto;
+  font-size: 12px;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  text-decoration: none;
+  margin: 0;
+}
