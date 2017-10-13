@@ -1,131 +1,132 @@
 * {
-  /**
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  **/
+  font-family: Roboto;
+  /** border: 2px solid rgba(0, 0, 0, 0.3); **/
 }
 
 /**
-COLOURS WOOOOOO
+  BACKGROUND
 **/
+
 html {
-  background: #242424;
+  background: #072039;
   background: linear-gradient(to bottom right, #072039, #000);
   min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 body {
-  background-color: #222;
+  background: #222;
+  width: 70%;
+  margin: 35px auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px #060606;
 }
-p, h1, h2, li {
+
+/**
+  COLOUR STUFF BEEP BEEP LETTUCE
+**/
+
+p, li {
   color: white;
 }
-.button, .back-to-top {
-  background-color: #ff8c00;
+h1, h2, .back-to-top {
+  background: #006aff;
+  color: white;
 }
-a {
-  color: #ff8c00;
+a, ol > li:before, .active {
+  color: #006aff;
 }
-ol > li:before {
-  color: #ff8c00;
-}
-ol > li.lightList:before {
-  color: #1c86ee;
+ol > li.purple:before {
+  color: #7d26cd;
 }
 
-/** gay stuff **/
-
-body {
-  width: 60%;
-  margin: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-radius: 10px;
+/** Intro colours~! **/
+.p {
+  color: #f55;
+}
+.g {
+  color: #55f;
+}
+.w {
+  color: #22f;
 }
 
-#signature {
-  text-align: center;
+/**
+  FONTS
+**/
+
+#signature, .back-to-top {
   font-size: 12px;
-  padding: 15px 0;
 }
-
-p, h1, h2, li {
-  font-family: Roboto;
+p, h2 {
   font-size: 16px;
-  margin-left: 10%;
-  margin-right: 10%;
 }
-
-.bold {
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 24px;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-li, .intro p {
+li, #tutorial p {
   font-size: 14px;
 }
-
-.glossary li {
-  font-size: 13px;
-  margin-left: 15%;
-  margin-right: 15%;
-}
-
-img:not(.staff) {
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-
-.staff {
-  border-radius: 5px;
-  margin: 10px 1px 0px 1px;
-}
-.admins {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.button {
+h1 {
+  font-size: 30px;
   text-align: center;
-  padding: 10px 0;
-  width: 90%;
-  margin: auto;
-  margin-top: 30px;
-  border-radius: 5px;
 }
-.button:not(h1) {
-  width: 80%;
-  margin-top: 15px;
-}
-
 a {
   font-weight: bold;
   text-decoration: none;
 }
 
-/** Intro styling **/
-.pris {
-  color: #ff6961;
-  font-weight: bold;
+/**
+  ALIGNMENT AND STYLE STUFF I DUNNO
+**/
+
+#logo {
+  display: block;
+  margin: 0 auto;
+  padding: 40px;
 }
-.guard {
-  color: #779ecb;
-  font-weight: bold;
+#signature {
+  text-align: center;
+  padding: 15px 0;
 }
-.warden {
-  color: #7b78cc;
-  font-weight: bold;
+p, h2 {
+  margin: 10px 10%;
+}
+li {
+  margin: 2px 12%;
+}
+#glossary li {
+  margin: 2px 15%;
+}
+h1 {
+  margin: 30px 5%;
+  padding: 12px 0;
+  border-radius: 5px;
+}
+h2 {
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 5px;
+}
+.staff {
+  border-radius: 5px;
+  margin: 2px;
+}
+.staffcontainer {
+  text-align: center;
+}
+.introduction {
+  margin-bottom: 50px;
+}
+#update {
+  text-align: center;
 }
 
-/** List styling **/
+/**
+  GAY-ASS LIST STYLIN' YO
+**/
+
 ol {
   list-style: none;
   counter-reset: li;
 }
-
 ol > li:before {
   font-weight: bold;
   content: counter(li);
@@ -138,13 +139,12 @@ ol > li:before {
   counter-increment: li;
 }
 
-/** Beam me up, Scotty! **/
+/**
+  RETURN TO TOP OF PAGE
+**/
+
 .back-to-top {
-  /** Font **/
-  font-family: Roboto;
-  font-size: 12px;
-  color: white;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   position: fixed;
   bottom: 20px;
