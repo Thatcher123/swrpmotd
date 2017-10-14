@@ -119,6 +119,11 @@ h2 {
   text-align: center;
 }
 
+/** Change button hand to pointer beep beep **/
+h1, h2 {
+  cursor: pointer;
+}
+
 /**
   GAY-ASS LIST STYLIN' YO
 **/
