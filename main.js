@@ -24,6 +24,17 @@ $(document).ready(() => {
     // Hiding all them elements! beep beep!
     $('h1, h2').next().hide();
 
+    let open = getUrlParameter('open')
+
+    if(open) {
+      let openIds = open.split(','),
+          i
+
+      for(i = 0; i < openIds.length; i++) {
+        $(`#${openIds[i]}`).next().show();
+      };
+    };
+
     // Get them buttons doing those jobs! (good work buttons)
     $('h1, h2').click(function() {
       $(this).next().slideToggle(1000); // Slide that open like you slide into those DMs
@@ -32,13 +43,12 @@ $(document).ready(() => {
 
   // info.json
   $.getJSON("info.json", function(data) {
-    console.log(data);
+  document.title = data.title;
     // Staff list
+	staffList.append('<p>You may open their profiles by clicking on their badges!</p>');
     $.each(data.stafflist, function(key, val) {
       staffList.append(`<h2>${key}</h2>`);
-      console.log($(this))
       for(i = 0; i < $(this).length; i++) {
-        console.log($(this)[i]);
         staffList.append(`<a href="http://steamcommunity.com/profiles/${$(this)[i]}/" target="_blank"><img src="https://steamsignature.com/status/english/${$(this)[i]}.png"/></a>`)
       };
     });
