@@ -1,108 +1,68 @@
-$(document).ready(function() {
-  // Hide elements
-  $('.button').next().hide();
+$(document).ready(() => {
+
+  let converter = new showdown.Converter();
+      content = $('#content');
+      staffList = $('#staff');
+      update = $('#update');
+
+  // Add content to the page from the markdown file!
+  $.get('content.md', data => {
+    content.html(converter.makeHtml(data)); // the thing with the stuff (yay)
+  }, 'text')
+  .done(() => { // Executed when the content is added!
+    // Wrap all the content around "// start" and "// end" with a div
+    // Give divs unique IDs with "// start ID"
+    // "introduction" has special styling!
+
+    $('p:contains(// start)').each(function() {
+      let divId = $(this).text().split(' ')[2]
+      $(this).nextUntil('p:contains(// end)').wrapAll(`<div id="${divId}"></div>`);
+    });
+    $('p:contains(// start)').remove();
+    $('p:contains(// end)').remove();
+
+    // Hiding all them elements! beep beep!
+    $('h1, h2').next().hide();
+
+    let open = getUrlParameter('open')
+
+    if(open) {
+      let openIds = open.split(','),
+          i
+
+      for(i = 0; i < openIds.length; i++) {
+        $(`#${openIds[i]}`).next().show();
+      };
+    };
+
+    // Get them buttons doing those jobs! (good work buttons)
+    $('h1, h2').click(function() {
+      $(this).next().slideToggle(1000); // Slide that open like you slide into those DMs
+    });
+  });
+
+  // info.json
+  $.getJSON("info.json", function(data) {
+  document.title = data.title;
+    // Staff list
+	staffList.append('<p>You may open their profiles by clicking on their badges!</p>');
+    $.each(data.stafflist, function(key, val) {
+      staffList.append(`<h2>${key}</h2>`);
+      for(i = 0; i < $(this).length; i++) {
+        staffList.append(`<a href="http://steamcommunity.com/profiles/${$(this)[i]}/" target="_blank"><img src="https://steamsignature.com/status/english/${$(this)[i]}.png"/></a>`)
+      };
+    });
+
+    // Last update
+    update.html(`<b>Last Update:</b> ${data.lastupdate}`)
+  });
+
   $('.back-to-top').hide();
+  backToTop(); // Beam me up, Scotty!
 
-  // When a button is clicked
-  $('.button').click(function() {
-    $(this).next().slideToggle(1000);
-  });
+  resizeContent(); // Resize content on page load
+  $(window).resize(() => resizeContent()); // Automatically resize content!
 
-  // Resizing
-  let size = (img, text, heading, signature, body) => {
-    $('img:not(.staff)').stop().animate({ width: img });
-    $('p, h2, li').css('font-size', text);
-    $('h1').css('font-size', heading);
-    $('#signature, .back-to-top').css('font-size', signature);
-    $('body').stop().animate({ width: body });
-  };
+  themeSelector(); // Theme selector functionality! (ooo fancy)
 
-  let resizeContent = () => {
-    if($(window).width() < 900) {
-      size('500px', '12px', '16px', '9px', '80%');
-      $('.back-to-top').html('\u25B2');
-      $('.back-to-top').css('border-radius', '100%');
-    } else
-    if($(window).width() < 1200) {
-      size('600px', '13px', '18px', '10px', '70%');
-      $('.back-to-top').html('Beam me up!');
-      $('.back-to-top').css('border-radius', '5px');
-    } else {
-      size('700px', '16px', '24px', '12px', '60%');
-      $('.back-to-top').html('Beam me up, Scotty!');
-      $('.back-to-top').css('border-radius', '5px');
-    };
-  };
-
-  resizeContent(); // Resize on page load
-
-  $(window).resize(() => { resizeContent() }); // Resize with page
-
-  // Beam me up, Scotty!
-  let offset = 500,
-      duration = 500;
-
-  $(window).scroll(function() {
-    if($(this).scrollTop() > offset) {
-      $('.back-to-top').fadeIn(duration);
-    } else {
-      $('.back-to-top').fadeOut(duration);
-    };
-  });
-
-  $('.back-to-top').click(event => {
-    event.preventDefault();
-
-    $('html, body').animate({ scrollTop: 0 }, 1000);
-    return false;
-  });
-
-
-
-  // Theme stuff 'cause I'm gay
-
-  let curTheme = 'dark',
-      darkPrimary = '#ff8c00',
-      lightPrimary = '#1c86ee';
-
-  $('.dark').css({ 'color': darkPrimary, 'font-weight': 'bold' });
-
-  $('.dark').click(() => {
-    if(curTheme != 'dark') {
-      // Background
-      $('html').css({
-        'background': '#242424',
-        'background': 'linear-gradient(to bottom right, #072039, #000)'
-      });
-      // Theme
-      $('body').css('background', '#222');
-      $('p, li').css('color', 'white');
-      $('.button, .back-to-top').css('background', darkPrimary);
-      $('a').css('color', darkPrimary);
-      $('ol > li').removeClass('lightList');
-      $('.back-to-top').css('color', 'white');
-      // Theme marker
-      curTheme = 'dark';
-      $('.theme').css({ 'color': 'white', 'font-weight': 'normal' });
-      $('.dark').css({ 'color': darkPrimary, 'font-weight': 'bold' });
-    };
-  });
-
-  $('.light').click(() => {
-    if(curTheme != 'light') {
-      // Background
-      $('html').css('background', 'url(lightBackground.jpg)');
-      // Theme
-      $('body').css('background', '#fff');
-      $('p, li').css('color', 'black');
-      $('.button, .back-to-top').css('background', lightPrimary);
-      $('a').css('color', lightPrimary);
-      $('ol > li').addClass('lightList');
-      $('.back-to-top').css('color', 'white');
-      // Theme marker
-      curTheme = 'light';
-      $('.theme').css({ 'color': 'black', 'font-weight': 'normal' });
-      $('.light').css({ 'color': lightPrimary, 'font-weight': 'bold' });
-    };
-  });
 });

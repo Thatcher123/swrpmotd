@@ -12,7 +12,7 @@ let values = [
   1200
 ];
 
-const resizing = () => {
+const resizeContent = () => {
   if($(window).width() < values[0]) {
     size('500px', '12px', '14px', '18px', '9px', '80%');
   } else
@@ -20,10 +20,5 @@ const resizing = () => {
     size('600px', '13px', '15px', '24px', '10px', '75%');
   } else {
     size('700px', '14px', '16px', '30px', '12px', '70%');
-  };
-};
-
-const resizeContent = () => {
-  resizing();
-  $(window).resize(() => resizing());
+  }
 };

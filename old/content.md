@@ -16,7 +16,7 @@ For more information on our donator packages, refer [here](http://poseidonserver
 
 // start tutorial <!-- Start a div surrounding the gamemode tutorial -->
 
-So you've stumbled upon the world of Jailbreak, but don't know where to get started with the gamemode... Don't worry, friend, I'll try and help you get your foot in the door! Although it may seem intimidating at first, once you get the hang of it, Jailbreak can be a lot of fun. Don't suffice this tutorial for a full introduction to our server, though, as you should always read the rules before playing!
+So you've stumbled upon the world of Jailbreak, but don't know where to get started with the gamemode... Don't worry, friend, I'll try and help you get your foot in the door! Although it may seem intimidating at first, once you get the hand of it, Jailbreak can be a lot of fun. Don't suffice this tutorial for a full introduction to our server, though, as you should always read the rules before playing!
 
 To start off, Jailbreak consists of two primary teams; these are the *prisoners*, who spawn in cells and follow the warden's orders, and the *guards*, who manage the prison! The guards team, and especially the *warden*, are in charge of orchestrating days, keeping track of prisoners, and most importantly, creating a fun and enjoyable experience for the prisoners team. The prisoners, on the other hand, have the option of participating in the warden's days and attempting to become the last prisoner alive, or if they dislike the games being played, rebelling, and trying to eliminate the guards team!
 

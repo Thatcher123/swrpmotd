@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Metadata -->
-    <title>Poseidon MOTD</title>
+    <!-- Metadata and gay stuff -->
+    <title>Poseidon MOTD</title> <!-- Change the page title in info.json! -->
     <link href="assets/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-    <!-- CSS Styling -->
+    <meta charset="UTF-8"/>
+    <!-- CSS styling (make that sucker look pretty) -->
     <link href="style.css" type="text/css" rel="stylesheet">
     <!-- jQuery and Showdown -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.6/dist/showdown.min.js"></script>
-    <!-- JS Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.6/dist/showdown.min.js" ></script>
+    <!-- JavaScript scripts~! -->
     <script src="main.js"></script>
     <script src="scripts/backtotop.js"></script>
     <script src="scripts/resizing.js"></script>
@@ -19,26 +20,24 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
   </head>
   <body>
-    <!-- Poseidon Servers logo at the top of the page -->
+    <!-- Poseidon Servers logo at the top of the page! -->
     <img id="logo" src="assets/logo.png" width="700px" alt="Poseidon Servers logo"/>
 
     <div id="content"></div> <!-- This is where everything in content.md will go! -->
 
-    <!--
-      STAFF LIST
-    -->
+    <h1 id="stafflist">Staff List</h1>
+    <div id="staff">
+      <p>You can click on their badges to go to their Steam profiles!</p>
+    </div> <!-- This is where the staff list in info.json will go! -->
 
-    <h1 id="currentstaff">Current Staff</h1>
-    <div id="staff"></div>
+    <p id="update"></p> <!-- This is where the last update in info.json will go! -->
 
-    <p id="update"></p>
-
-    <!-- Signature famsquad -->
-    <p id="signature">MOTD created by <a href="https://steamcommunity.com/id/spacepupper/" target="_blank">Cosmos</a>, rules written by the Poseidon administrators!</br>
-    <!-- Themes boiiiii -->
+    <!-- Signature famsquad *dabs* -->
+    <p id="signature">MOTD created by <a href="https://steamcommunity.com/profiles/76561198173462303/" target="_blank">Cosmos</a>, rules written by the Poseidon administrators!</br>
+    <!-- Themes boiiiiiii -->
     Current theme: <span id="dark" class="theme">Dark</span>, <span id="light" class="theme">Light</span>, <span id="cosmos" class="theme">Cosmos</span></p>
 
     <!-- Return to top of page -->
-    <a class="back-to-top" style="display:inline;" href="#">Beam me up, Scotty!</a>
+    <a id="back-to-top" style="display:inline;" href="#">Beam me up, Scotty!</a>
   </body>
 </html>
